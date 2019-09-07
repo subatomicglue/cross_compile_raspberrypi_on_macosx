@@ -11,7 +11,9 @@ COMPILER_PATH2=${SYSROOT}/usr/lib/arm-linux-gnueabihf
 
 RPI=--target=arm-linux-gnueabihf \
     --sysroot=${SYSROOT} \
-    -isysroot=${SYSROOT} \
+    -isystem=${SYSROOT} \
+    -isystem=${SYSROOT}/usr/include/c++/4.9 \
+    -isystem=${SYSROOT}/usr/include/arm-linux-gnueabihf/c++/4.9 \
     -L${COMPILER_PATH} \
     -L${COMPILER_PATH2} \
     -B${COMPILER_PATH} \
