@@ -11,19 +11,19 @@
 
 
 # Install & Build:
-start a terminal and type the commands:
+Start a terminal and type the commands:
 ```
 # download/build/install bintools for MacOSX, enabled to output for Raspberry Pi
 # download/install llvm for MacOSX (uses bintools to build for rPI)
 
-install-toolchain
+./install-toolchain.sh
 
 # copy native raspberry pi include and lib directories for compiling
 # - attach a raspberry pi to your network
 # - edit top of this file with your user/host
 # - then run:
 
-install-sysroot
+./install-sysroot.sh
 ```
 
 you should see this directory created
@@ -43,7 +43,7 @@ you should see this directory created
 ```
 
 # Building the example
-Just start a terminal and type
+Start a terminal and type
 ```
 make
 ```
