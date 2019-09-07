@@ -2,7 +2,7 @@
 ##########################
 # setup for raspberry pi
 ##########################
-SDK=./sdk
+SDK=${HOME}/RPI_SDK
 BINTOOLS=${SDK}/binutils-2.28/build
 SYSROOT=${SDK}/sysroot
 
