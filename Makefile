@@ -9,25 +9,28 @@ SYSROOT=${SDK}/sysroot
 COMPILER_PATH=${SYSROOT}/usr/lib/gcc/arm-linux-gnueabihf/4.9
 COMPILER_PATH2=${SYSROOT}/usr/lib/arm-linux-gnueabihf
 
-RPI=--target=arm-linux-gnueabihf \
+COMPILEFLAGS=--target=arm-linux-gnueabihf \
     --sysroot=${SYSROOT} \
     -isystem=${SYSROOT} \
     -isystem=${SYSROOT}/usr/include/c++/4.9 \
     -isystem=${SYSROOT}/usr/include/arm-linux-gnueabihf/c++/4.9 \
+    -B${COMPILER_PATH} \
+    --gcc-toolchain=${BINTOOLS}/bin
+LINKFLAGS=--target=arm-linux-gnueabihf \
+    --sysroot=${SYSROOT} \
     -L${COMPILER_PATH} \
     -L${COMPILER_PATH2} \
-    -B${COMPILER_PATH} \
-    --gcc-toolchain=${BINTOOLS}/bin \
-    -fuse-ld=lld\
-    -Wno-unused-command-line-argument
+    -fuse-ld=lld
 
-C=${BINTOOLS}/bin/clang ${RPI}
-CPP=${BINTOOLS}/bin/clang++ ${RPI}
+C=${BINTOOLS}/bin/clang ${COMPILEFLAGS}
+CPP=${BINTOOLS}/bin/clang++ ${COMPILEFLAGS}
+C_LD=${BINTOOLS}/bin/clang ${LINKFLAGS}
+CPP_LD=${BINTOOLS}/bin/clang++ ${LINKFLAGS}
 
 
 all:
 	${CPP} -c -o main.o main.cpp
-	${CPP} -o main main.o
+	${CPP_LD} -o main main.o
 
 clean:
 	rm main main.o
