@@ -3,7 +3,7 @@
 # setup for raspberry pi
 ##########################
 SDK=${HOME}/RPI_SDK
-BINTOOLS=${SDK}/binutils-2.28/build
+BINTOOLS=${SDK}/compiler
 SYSROOT=${SDK}/sysroot
 
 COMPILER_PATH=${SYSROOT}/usr/lib/gcc/arm-linux-gnueabihf/4.9
