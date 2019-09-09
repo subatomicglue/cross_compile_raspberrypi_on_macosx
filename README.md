@@ -16,14 +16,14 @@ Start a terminal and type the commands:
 # download/build/install bintools for MacOSX, enabled to output for Raspberry Pi
 # download/install llvm for MacOSX (uses bintools to build for rPI)
 
-./install-toolchain.sh
+./install-raspberrypi-toolchain.sh
 
 # copy native raspberry pi include and lib directories for compiling
 # - attach a raspberry pi to your network
 # - edit top of this file with your user/host
 # - then run:
 
-./install-sysroot.sh
+./install-raspberrypi-sysroot.sh
 ```
 
 you should see this directory created
