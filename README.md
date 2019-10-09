@@ -1,5 +1,7 @@
 
 # An example of cross compiling for Raspberry PI on MacOSX, using:
+See [this](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-) for a production version. (This is a simplified toy example)
+
 - MacOSX LLVM tools
   http://releases.llvm.org/4.0.0/clang+llvm-4.0.0-x86_64-apple-darwin.tar.xz
 
@@ -63,4 +65,3 @@ Outputs:
 ```
 hello world!
 ```
-
